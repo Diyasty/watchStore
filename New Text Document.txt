@@ -1,0 +1,6 @@
+ng build --prod --base-href=” https://Diyasty.github.io/ArShop/”
+
+https://github.com/Diyasty/ArShop.git
+
+ng build --prod --base-href "https://<username>.github.io/<reponame>/"
+ng deploy --base-href=/ArShop/

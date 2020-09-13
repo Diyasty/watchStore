@@ -1,0 +1,68 @@
+<div class="main_dashboard" dir="rtl">
+  <header role="banner">
+    <h1>زون ستور</h1>
+    <ul class="utilities">
+      <br />
+      <li class="users"><a href="/">الرجوع للرئيسة </a></li>
+      <li class="logout warn"><a href="">تسجيل الخروج </a></li>
+    </ul>
+  </header>
+
+  <nav role="navigation">
+    <ul class="main">
+      <li class="dashboard">
+        <a [routerLink]="['/dashboard']" routerLinkActive="active"
+          >لوحة التحكم
+        </a>
+      </li>
+      <li routerLinkActive="active" class="write">
+        <a
+          [routerLink]="['/dashboard']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >الطلبات
+        </a>
+      </li>
+      <li class="edit">
+        <a [routerLink]="['products']" routerLinkActive="active">المنتجات </a>
+      </li>
+      <li routerLinkActive="active" class="users">
+        <a [routerLink]="['users']" routerLinkActive="active">المستخدمين </a>
+      </li>
+      <li routerLinkActive="active" class="comments">
+        <a href="#">الاحصائيات </a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="statists">
+      <div class="row">
+        <div class="col">
+          <div class="box" [routerLink]="['/dashboard']">
+            <i class="fa fa-bolt 3x"></i>
+            <h4>50</h4>
+            <h3>الطلبات</h3>
+          </div>
+        </div>
+        <div class="col">
+          <div class="box2" [routerLink]="['users']">
+            <i class="fa fa-user 3x"></i>
+            <h4>50</h4>
+            <h3>المستخدمين</h3>
+          </div>
+        </div>
+        <div class="col">
+          <div class="box3" [routerLink]="['products']">
+            <i class="fa fa-list-alt 3x"></i>
+            <h4>50</h4>
+            <h3>المنتجات</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+</div>

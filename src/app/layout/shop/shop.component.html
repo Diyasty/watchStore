@@ -1,0 +1,39 @@
+
+<div class="mt-5 mb-5 bg">
+    <h4 class="text-center m-3 p-2">
+      وصل حديثا
+    </h4>
+
+    <hr class="hrs" />
+    <app-loading-spinner *ngIf="!Products"></app-loading-spinner>
+<div class="row">
+
+  <div class="col-lg-4 col-md-4" *ngFor="let item of Products">
+    <div class="card">
+      <figure>
+          <img [src]="item.image" alt="t-shirt" />
+        </figure>
+        <section class="details">
+          <div class="min-details">
+            <h1>{{ item.title }}</h1>
+            <h1 class="price text-left">
+              {{ item.price }}
+              <h4>ج م</h4>
+            </h1>
+          </div>
+          <div class="options">
+            <div class="options-size"></div>
+          </div>
+          <a class="btn" (click)="AddToCart(item.id)">
+            اضافة الى السلة
+            <i class="fa fa-shopping-cart ml-1" aria-hidden="true"></i>
+          </a>
+          <a class="btn2" href="product/{{ item.id }}">
+            تفاصيل المنتج
+            <i class="fa fa-snapchat-ghost ml-1" aria-hidden="true"></i>
+          </a>
+        </section>
+      </div>
+    </div>
+    </div>
+</div>

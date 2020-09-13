@@ -1,0 +1,54 @@
+h2.padded-multi-line {
+  font: 50px cairo;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+  margin: 1em auto;
+  position: relative;
+  top: -0.7em;
+}
+.padded-multi-line > span {
+  /*
+    display: inline; */
+  box-shadow: 0 0.45em 0 0 #0886ecd6, 0 0.45em 0 0 #a615df;
+  /* padding: 0 10px 0 10px; */ /* position: relative; */ /* left: .7em;
+    */
+}
+.padded-multi-line span span {
+  position: relative;
+  top: 0.68em;
+  color: rgba(0, 0, 0, 0.9); /* left: -.35em; */ /* display: inline; */
+  /* white-space: pre-wrap; */
+  padding: 0 1rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; /*
+    box-shadow: .7em 0 0 -.33em orange, -.7em 0 0 -.33em orange; */
+}
+a {
+  -webkit-transition: 0.25s all;
+  transition: 0.25s all;
+}
+
+@mixin BoxShadowHelper($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  @if $level == 2 {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+      0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
+}
+.slide {
+  cursor: pointer;
+}
+.best {
+  background-color: #e5eff0;
+}
+img.d-block.w-100 {
+  outline: none;
+}

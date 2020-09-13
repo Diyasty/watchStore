@@ -1,0 +1,129 @@
+
+<div class="container text-center">
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+  <div class="row">
+    <div class="mt-5 mb-3 col-md-6 col-xs-10 offset-md-3">
+      <form
+        *ngIf="!isLoading"
+        (ngSubmit)="onSubmit(RegisterForm)"
+        #RegisterForm="ngForm"
+        [formGroup]="validatingForm"
+        class="text-center border p-5"
+        style="margin: 0 auto;"
+      >
+        <p class="alert alert-danger">
+          لتسجيل الدخول كأدمن : <br />
+          Admin@admin.com || password : 123456
+        </p>
+        <p class="alert alert-primary">
+          لتسجيل الدخول كمستخدم : <br />
+          test@test.com password : testpwd
+        </p>
+
+        <h1 class="h3 mb-3 font-weight-normal">تسجيل الدخول</h1>
+        <input
+          type="email"
+          id="inputEmail"
+          class="form-control mb-4"
+          placeholder="البريد الاليكترونى  "
+          required
+          autofocus
+          id="defaultRegisterFormEmail"
+          formControlName="email"
+        />
+
+        <input
+          type="password"
+          id="defaultRegisterFormPassword"
+          formControlName="password"
+          class="form-control mb-4"
+          placeholder="كلمة السر "
+          required
+        />
+        <p class="alert alert-danger" *ngIf="message">
+          {{ message }}
+        </p>
+
+        <button
+          [disabled]="!RegisterForm.valid"
+          class="btn btn-primary btn-block"
+          type="submit"
+        >
+          تسجيل الدخول
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--
+
+  <div *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div></div>
+<form
+  *ngIf="!isLoading"
+  (ngSubmit)="onSubmit(RegisterForm)"
+  #RegisterForm="ngForm"
+  [formGroup]="validatingForm"
+  class="text-center border border-light p-5 col-md-6 "
+  style="margin: 0 auto;"
+>
+  <p class="h4 mb-4">Sign in</p>
+  <p class="alert alert-primary">
+    To log in As Admin : username : Admin@admin.com password : 123456
+  </p>
+  <p class="alert alert-primary">
+    To log in As user : username : test@test.com password : testpwd
+  </p>
+  <input
+    type="email"
+    id="defaultRegisterFormEmail"
+    formControlName="email"
+    class="form-control mb-4"
+    placeholder="E-mail"
+  />
+
+  <input
+    [type]="ShowPassword ? 'text' : 'password'"
+    id="defaultRegisterFormPassword"
+    formControlName="password"
+    class="form-control"
+    placeholder="Password"
+    aria-describedby="defaultRegisterFormPasswordHelpBlock"
+  />
+  <p (click)="toggleEye()">
+    <i [class]="ShowPassword ? 'fa-eye far' : 'fa-eye-slash far'"></i>
+  </p>
+
+  <p class="alert alert-danger " *ngIf="message">
+    {{ message }}
+  </p>
+  <button mdbBtn color="danger" block="true" class="my-4" type="submit">
+    Sign in
+  </button>
+
+  <p>
+    Not a member?
+    <a [routerLink]="['/register']" routerLinkActive="router-link-active"
+      >Register</a
+    >
+  </p>
+
+  <p>or sign in with:</p>
+
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="facebook"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="twitter"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="linkedin"></mdb-icon>
+  </a>
+  <a type="button" class="light-blue-text mx-2">
+    <mdb-icon fab icon="github"></mdb-icon>
+  </a>
+</form>
+ -->

@@ -1,0 +1,606 @@
+// -------------------------------
+// Initial styles
+// -------------------------------
+
+$border: #dce6eb;
+$bg-main: #fff;
+$color-main: #333;
+
+h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1003px;
+  margin: 0 auto;
+}
+
+.bg-lighter {
+  background-color: #fdfdfd;
+}
+
+.bg-grey {
+  background: linear-gradient(180deg, #f3f3f3 0%, #ffffff 100%);
+  padding: 2rem 0;
+}
+
+// -------------------------------
+// Card styles from Spark
+// -------------------------------
+.card {
+  border: 0.0625rem solid $border;
+  background-color: $bg-main;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card__body {
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
+
+.card__body--mini {
+  font-size: 0.8125rem;
+}
+
+.card__title {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card__info {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__image {
+  width: 100%;
+  max-width: 6.875rem;
+  display: block;
+  padding: 0.6rem;
+
+  img {
+    max-height: 3.2rem;
+  }
+}
+
+.card__action {
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+}
+
+// -------------------------------
+// New styles
+// -------------------------------
+.heading--centred {
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  font-size: 1.5625rem;
+}
+.cell-column {
+  flex-direction: column;
+}
+
+.cell-gutter {
+  margin-bottom: 1rem;
+}
+
+.card__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1.25rem;
+  color: $color-main;
+}
+
+.card__wrapper--padded {
+  padding: 2rem;
+}
+
+.card__media {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  min-height: 80px;
+  // javascript border
+  border-bottom: 4px solid #69b3e5;
+  border-top: 0;
+  padding: 0;
+}
+
+.card__title--header {
+  text-align: center;
+  width: 80%;
+  font-size: 1.5625rem;
+  padding-bottom: 1rem;
+  margin: 0 auto 1.5rem;
+  border-bottom: 0.125rem solid #dce6eb;
+}
+
+.card__intro {
+  font-size: 1.0625rem;
+  // Changed for new style
+  // border-bottom: 0.0625rem solid $border;
+}
+
+.card__intro--info {
+  font-size: 0.875rem;
+  padding-bottom: 1.25rem;
+}
+
+.card__info--primary {
+  margin-right: 1.875rem;
+}
+
+.card__action-wrapper {
+  padding: 1.5rem 0.5rem;
+}
+
+.rate {
+  margin-bottom: 0.5rem;
+}
+
+.rate--spaced {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rate-amount {
+  font-size: 0.875rem;
+  color: #262626;
+}
+
+.card__stamp {
+  padding-right: 1rem;
+  color: #7492a5;
+}
+
+// -------------------------------
+// Icons
+// -------------------------------
+.icon-default {
+  align-self: center;
+  font-size: 1rem;
+  padding: 0 2rem 0 0;
+  color: #000;
+}
+
+.icon-default--header {
+  font-size: 1.25rem;
+  padding: 0 1rem 0 0;
+}
+
+.icon-green {
+  align-self: center;
+  font-size: 1.25rem;
+  padding: 0 2rem 0 0;
+  color: #2ecc6b;
+}
+
+.icon-orange {
+  align-self: center;
+  font-size: 1.25rem;
+  padding: 0 2rem 0 0;
+  color: #ea5b25;
+}
+
+.icon--small {
+  font-size: 1rem;
+  padding: 0 0.5rem 0 0;
+}
+
+.icon-gold {
+  align-self: center;
+  font-size: 1.25rem;
+  color: #f2a922;
+}
+
+.icon-gold--small {
+  font-size: 1.0625rem;
+}
+
+.icon-gold--faded {
+  color: #f1961c;
+  opacity: 0.4;
+}
+
+.icon-gold--opacity:before {
+  background: linear-gradient(
+    to right,
+    rgba(245, 166, 35, 1) 50%,
+    rgba(241, 231, 103, 1) 50%,
+    rgba(251, 216, 158, 1) 50%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: initial; /* reset Font Awesome's display:inline-block */
+}
+
+.icon-blue {
+  align-self: center;
+  font-size: 1.25rem;
+  padding: 0 0.5rem;
+  color: #0b5485;
+}
+
+.icon-blue--small {
+  font-size: 0.875rem;
+}
+
+.icon--large {
+  font-size: 1.5625rem;
+}
+
+// -------------------------------
+// List styles
+// -------------------------------
+.list_flex {
+  display: flex;
+  flex-flow: wrap;
+  list-style: none;
+  font-size: 1.0625rem;
+
+  @media screen and (max-width: 40rem) {
+    display: block;
+  }
+}
+
+.list_flex--inline {
+  flex-flow: nowrap;
+  padding: 0.5rem 0;
+}
+
+.list_two-column {
+  display: flex;
+  width: 50%;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  list-style-type: none;
+
+  @media screen and (max-width: 40rem) {
+    width: 100%;
+  }
+}
+
+.list_flex--padding {
+  padding: 1rem 0;
+}
+
+.flex_equal {
+  flex: 1;
+}
+
+// .list {
+//   padding-top: 1rem;
+// }
+
+// .list--aligned {
+//   line-height: 1.625rem;
+//   display: flex;
+//   justify-content: space-between;
+//   padding-top: 1.5rem;
+
+//   @media screen and (max-width: 40rem) {
+//     flex-direction: column;
+//   }
+// }
+
+// .list__item--aligned-full {
+//   width: 100%;
+// }
+
+// .list--aligned-column {
+//   flex: 1;
+// }
+
+// .list_flex--padded {
+//   padding-right: 2rem;
+// }
+
+// .list__item--padded {
+//   padding-left: 2rem;
+// }
+
+// .list--two-column--padded {
+//   padding: 1rem 2rem 2rem 2rem;
+// }
+
+.button--lockdown {
+  text-align: center;
+  padding: 1.25rem 2rem;
+  background-color: #30d27e;
+  color: #fff;
+}
+
+.button--lockdown__icon {
+  font-size: 1.4375rem;
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+// -------------------------------
+// Layer cake card
+// -------------------------------
+.card--layer-cake {
+  // .card__wrapper {
+  //   padding: 0 1rem;
+  //   display: flex;
+  //   flex-direction: column;
+  //   flex-grow: 1;
+  //   color: $color-main;
+  // }
+
+  .card__title {
+    font-size: 1.5625rem;
+  }
+
+  .card__media {
+    padding: 0.5rem 0;
+  }
+
+  .card__action {
+    display: block;
+    text-decoration: none;
+    color: #0e4172;
+    font-size: 1.0625rem;
+  }
+
+  .list {
+    padding: 0;
+  }
+
+  .list__item {
+    padding: 0;
+  }
+}
+
+// .card--layer-cake--cherry {
+//   .card__wrapper {
+//     padding: 0 1.875rem;
+//     display: flex;
+//     flex-direction: column;
+//     flex-grow: 1;
+//     color: $color-main;
+//   }
+// }
+
+// -------------------------------
+// Layers
+// -------------------------------
+.layer {
+  padding: 1rem 0.5rem;
+  border-top: 0.0625rem solid #e8e8e8;
+  display: flex;
+}
+
+.layer--clear {
+  border-top: 0;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+.layer__title {
+  font-size: 1rem;
+  flex: 1;
+  padding-top: 0;
+}
+
+.layer__title--uppercase {
+  text-transform: uppercase;
+}
+
+.layer__body {
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  flex: 1.5;
+  color: #45474d;
+}
+
+.layer__body--narrow {
+  flex: 1;
+}
+
+.layer__body_mgbottom {
+  margin-bottom: 1rem;
+}
+
+// -------------------------------
+// Chocolate cake
+// -------------------------------
+.chocolate-cake {
+  border: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1.0625rem;
+  height: 100%;
+}
+
+.chocolate-cake--icing {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #dce6eb;
+}
+
+.chocolate-cake__title {
+  font-size: 1.25rem;
+  padding-right: 1rem;
+}
+
+.chocolate-cake__title--alt {
+  font-size: 1.0625rem;
+}
+
+// -------------------------------
+// Chocolate cake large
+// -------------------------------
+.chocolate-cake--large {
+  .chocolate-cake__title {
+    font-size: 1.5625rem;
+  }
+}
+
+// -------------------------------
+// Sponge Cake
+// -------------------------------
+.sponge-cake {
+  // card styles
+  border: 0.0625rem solid $border;
+  background-color: $bg-main;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .card__title {
+    font-size: 1.5625rem;
+    padding: 1.5rem;
+    border-bottom: 0.25rem #e83972 solid;
+  }
+}
+
+// -------------------------------
+// Scone
+// -------------------------------
+.scone {
+  border: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding: 2rem 0;
+
+  @media screen and (max-width: 40rem) {
+    flex-direction: column;
+  }
+}
+
+.image {
+  // same styles as comment avatars
+  min-width: 2.25rem;
+  border-radius: 50%;
+}
+
+.scone__media {
+  padding: 0.875rem 0.875rem 0 0;
+}
+
+.scone__title {
+  font-size: 1.25rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0;
+}
+
+.scone__body {
+  font-size: 1.0625rem;
+  line-height: 2rem;
+  color: #343434;
+}
+
+.scone__icing {
+  display: flex;
+  flex: 1;
+}
+
+.scone__jam {
+  padding: 0.875rem 0;
+}
+
+.scone__jam-name {
+  font-size: 0.9375rem;
+  font-weight: bold;
+}
+
+.scone__jam-date {
+  font-size: 0.8125rem;
+  color: #7492a5;
+}
+
+.scone__jam-size {
+  font-size: 1.0625rem;
+  color: #134370;
+}
+
+.scone__cream {
+  padding: 0.875rem;
+  flex: 2;
+}
+
+// -------------------------------
+// Card ticket
+// -------------------------------
+.card--ticket {
+  .card__wrapper--padded {
+    padding: 1rem;
+  }
+
+  .card__title {
+    font-size: 1.25rem;
+  }
+
+  .card__body {
+    font-size: 1.0625rem;
+    line-height: 2rem;
+  }
+
+  .layer {
+    border: 0;
+    padding: 1rem 0 0 0;
+  }
+}
+
+// -------------------------------
+// Card biscuit
+// -------------------------------
+.card--biscuit {
+  .card__wrapper {
+    padding: 1rem;
+  }
+
+  .card__body {
+    flex: 1;
+    padding-bottom: 1rem;
+    line-height: 1.3125rem;
+    font-size: 0.875rem;
+  }
+
+  .card__image {
+    max-width: 100%;
+  }
+
+  .card__title {
+    font-size: 0.875rem;
+    font-weight: normal;
+    line-height: 1.0625rem;
+    color: #0b5485;
+  }
+
+  .card__info {
+    display: flex;
+    margin: 0.875rem 0 1.25rem 0;
+    color: #0b5485;
+  }
+
+  .card__action {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    text-decoration: none;
+    color: #134370;
+  }
+}

@@ -1,0 +1,85 @@
+<app-header></app-header>
+<div *ngIf="!isUser" class="row text-center m-2 p-2">
+  <p class="alert alert-danger" style="margin:0 auto;"> الرجاء تسجيل الدخول لاكمال عملية الشراء
+  </p>
+</div>
+<app-log-in *ngIf="!isUser"></app-log-in>
+<div *ngIf="isUser" class="container">
+  <div class="card-body">
+    <div class="payment">
+      <div class="creditcard">
+        <div class="thecard">
+          <div class="top-card">
+            <div class="circle"></div>
+            <div class="card-title"></div>
+          </div>
+          <div class="card-info">
+            <div class="card-number">
+              1234 5678 9012 3456
+            </div>
+            <div class="exp-date">
+              01 / 2018
+            </div>
+            <div class="card-holder">
+              John Doe
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form">
+        <form action="" method="get">
+          <label for="cardnumber">رقم البطاقة </label>
+          <input
+            type="text"
+            id="cardnumber"
+            placeholder="1234 5678 9012 3456"
+          />
+          <label for="cardholder">اسم صاحب البطاقة </label>
+          <input type="text" id="cardholder" placeholder="John Doe" />
+          <label for="exp">تاريخ انتهاء البطاقة </label>
+          <div class="date">
+            <select name="month" id="month">
+              <option value="january">January</option>
+              <option value="february">February</option>
+              <option value="march">March</option>
+              <option value="april">April</option>
+              <option value="may">May</option>
+              <option value="june">June</option>
+              <option value="july">July</option>
+              <option value="august">August</option>
+              <option value="september">September</option>
+              <option value="october">October</option>
+              <option value="november">November</option>
+              <option value="december">December</option>
+            </select>
+            <select name="Year">
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+          <div class="small">
+            <div class="cvc">
+              <label for="cvc">CVC</label>
+              <input
+                type="text"
+                id="cvc"
+                maxlength="3"
+                size="4"
+                placeholder="123"
+              />
+            </div>
+            <p>ثلاثة او اريعة ارقام توجد على ظهر لباطقة</p>
+          </div>
+          <button>استكمال</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

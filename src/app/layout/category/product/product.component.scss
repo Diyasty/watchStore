@@ -1,0 +1,28 @@
+.bg-gray {
+  background-color: transparent !important;
+}
+img {
+  width: 300px !important;
+  height: 200px !important;
+}
+.shop {
+  margin: 0 auto;
+  padding: 0 25px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 40px 10px;
+  height: auto;
+  .divIcon :hover {
+    cursor: pointer;
+    color: rgb(230, 9, 145);
+  }
+  .new {
+    @media (max-width: 575.98px) {
+      margin: 0 43px;
+    }
+  }
+}
+.divIcon :hover {
+  cursor: pointer;
+  color: rgb(230, 9, 145);
+}

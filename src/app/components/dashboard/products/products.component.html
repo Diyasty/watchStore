@@ -1,0 +1,118 @@
+<button
+  [routerLink]="['../addProduct']"
+  class="btn btn-success btn-lg mt-2 mb-1 rounded float-left"
+>
+  <i class="fa fa-plus" aria-hidden="true"></i>
+  اضافة منتج
+</button>
+
+<table class="table mt-1">
+  <thead class="thead">
+    <tr>
+      <th scope="col">رقم المعرف</th>
+      <th scope="col">عنوان المنتج</th>
+      <th scope="col">صورة المنتج</th>
+      <th scope="col">سعر المنتج</th>
+      <th scope="col">تعديل</th>
+      <th scope="col">حذف</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of Products">
+    <tr>
+      <th scope="row">{{ item.id }}</th>
+      <td>{{ item.title }}</td>
+      <td>
+        <img [src]="item.image" height="40px" width="40px" />
+      </td>
+      <td>{{ item.price }}</td>
+      <td>
+        <i
+          class="btn btn-lg btn-primary"
+          data-toggle="modal"
+          data-target="#largeModal"
+          class="fa fa-edit"
+          (click)="updateProducts(item.id)"
+        ></i>
+      </td>
+      <td>
+        <i
+          class="btn btn-lg btn-primary"
+          class="fa fa-remove"
+          (click)="delateProducts(item.id)"
+        ></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="row mb-4"></div>
+<div
+  class="modal fade"
+  id="largeModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="basicModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">تعديل المنتج</h4>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="from-group" *ngIf="data">
+          <label for="title"> اسم المنتج </label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="تعديل اسم المنتج "
+            name="title"
+            [(ngModel)]="data.title"
+          />
+          <label for="price"> سعر المنتج </label>
+          <input
+            type="number"
+            class="form-control"
+            name="price"
+            placeholder="تعديل سعر  المنتج "
+            [(ngModel)]="data.price"
+          />
+          <input
+            type="number"
+            class="form-control"
+            name="sale"
+            #newPrice
+            placeholder="قيمة الخصم "
+            [(ngModel)]="data.newPrice"
+          />
+
+          <label for="image"> صورة المنتج </label>
+          <img
+            [src]="data.image"
+            alt=""
+            srcset=""
+            height="50px"
+            width="50px"
+            style="display: block;"
+          />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-success mr-auto"
+          data-dismiss="modal"
+        >
+          حفظ التغيرات
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div *ngIf="Products">
+  <div class="container-fluid">
+    <h2 class="padded-multi-line">
+      <span>
+        <span> المنتجات </span>
+      </span>
+    </h2>
+    <div class="row" *ngIf="Products">
+      <div class="col-lg-3 col-md-6" *ngFor="let item of Products">
+        <div class="card">
+          <!-- <span
+            [class]="
+              item.category == 'وصل حديثا '
+                ? 'badge pill-badge badge-danger'
+                : item.category.includes('خصم')
+                ? 'badge pill-badge badge-success'
+                : ''
+            "
+            >{{ item.title }}
+          </span> -->
+          <figure>
+            <img [src]="item.image" alt="t-shirt" />
+          </figure>
+          <section class="details">
+            <div class="min-details">
+              <h1>{{ item.title }}</h1>
+              <h1 class="price text-left">
+                {{ item.price }}
+                <h4>ج م</h4>
+              </h1>
+            </div>
+            <div class="options">
+              <div class="options-size"></div>
+            </div>
+            <div class="mra">
+              <ng-container *ngFor="let star of stars">
+                <!-- <app-stars
+                  [starId]="star"
+                  [rating]="hoverState || rating"
+                  (enter)="enter($event)"
+                  (leave)="leave($event,i)"
+                  (bigClick)="updateRating(star)"
+                >
+                </app-stars> -->
+              </ng-container>
+            </div>
+            <a class="btn" (click)="AddToCart(item.id)">
+              اضافة الى السلة
+              <i class="fa fa-shopping-cart ml-1" aria-hidden="true"></i>
+            </a>
+            <a class="btn2" href="product/{{ item.id }}">
+              تفاصيل المنتج
+              <i class="fa fa-snapchat-ghost ml-1" aria-hidden="true"></i>
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

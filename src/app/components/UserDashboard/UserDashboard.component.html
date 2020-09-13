@@ -1,0 +1,60 @@
+<app-header></app-header>
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 text-center user">
+        <div class="head my-2">
+          <img
+            src="../../../assets/img/31715248.jpg"
+            class="rounded-circle img-thumbnail"
+            height="150"
+            width="150"
+          />
+          <h4 class="mt-2 mb-3">محمد الديسطى</h4>
+        </div>
+        <nav role="navigation">
+          <ul class="main">
+            <li class="dashboard">
+              <a
+                [routerLink]="['/profile/Diyasty']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                اعدادات الحساب
+              </a>
+            </li>
+            <li routerLinkActive="active" class="write">
+              <a
+                [routerLink]="['/profile/Diyasty/orders']"
+                routerLinkActive="active"
+                >مشترياتى
+              </a>
+            </li>
+            <li class="edit">
+              <a
+                [routerLink]="['/profile/Diyasty/fav']"
+                routerLinkActive="active"
+                >المفضلة
+              </a>
+            </li>
+            <!-- <li routerLinkActive="active" class="users">
+              <a [routerLink]="['shop']" routerLinkActive="active"
+                >مقترحات لك
+              </a>
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-8">
+        <div
+          [@routeAnimations]="
+            o && o.activatedRouteData && o.activatedRouteData['animation']
+          "
+        >
+          <router-outlet #o="outlet"></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

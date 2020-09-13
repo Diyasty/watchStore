@@ -1,0 +1,194 @@
+<main>
+  <app-header></app-header>
+  <div class="container-fluid mt-4 mb-3">
+    <div class="row p-2">
+      <div
+        class="col-md-6 border rounded-right border-white bg-light text-center"
+      >
+        <img [src]="Product?.image" class="border" />
+      </div>
+      <div class="col-md-6 border-top border-white border-right border-left">
+        <h2>{{ Product?.title }}</h2>
+        <div class="mra">
+          <ng-container *ngFor="let star of stars">
+             <!-- <app-stars
+              [starId]="star"
+              [rating]="hoverState || rating"
+              (enter)="enter($event)"
+              (leave)="leave($event)"
+              (bigClick)="updateRating(star)"
+            >
+            </app-stars> -->
+          </ng-container>
+        </div>
+        <h4>{{ Product?.price }}</h4>
+        <span> جنيه مصرى </span>
+        <div class="divIcon mt-2" style="cursor: pointer;">
+          <i
+            (click)="AddToCart(Product.id, ic)"
+            #ic
+            class="icon fa fa-shopping-cart fa-2x mr-5"
+            aria-hidden="true"
+          ></i>
+          <i
+            #fc
+            class="fa fa-heart fa-2x"
+            (click)="AddToFav(Product.id, fc)"
+            aria-hidden="true"
+          ></i>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <nav class="nav nav-pills nav-fill border-white" style="cursor: pointer;">
+      <a
+        (click)="showDes()"
+        [class]="des ? 'nav-item nav-link active ' : 'nav-item nav-link'"
+      >
+        وصف المنتج
+      </a>
+      <a
+        [class]="info ? 'nav-item nav-link active ' : 'nav-item nav-link'"
+        #in
+        (click)="showInfo()"
+      >
+        معلومات اضافية
+      </a>
+      <a
+        (click)="showVote()"
+        [class]="vote ? 'nav-item nav-link active ' : 'nav-item nav-link'"
+        >تقيم المستخدمين
+      </a>
+    </nav>
+
+    <hr />
+    <div class="row text-center-bg-dark p-3">
+      <div
+        *ngIf="des"
+        class="border-top rounded-right border-primary border-right border-left"
+      >
+        dis هو ببساطة نص شكلي(بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في
+        صناعات المطابع ودور النشر. كان لوريم إيبسوم ولايزال المعيار للنص الشكلي
+        منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل
+        منذ القرن الخامس عشر عندما قامت مطبعة مجهولة برص مجموعة من الأحرف بشكل
+      </div>
+      <div
+        *ngIf="vote"
+        style="margin: 0 auto;"
+        class="border-top rounded-right border-primary border-right border-left"
+      >
+        <app-reviews></app-reviews>
+      </div>
+      <div
+        *ngIf="info"
+        style="margin: 10px auto; width: 70%;"
+        class="border-top rounded-right border-primary border-right border-left"
+      >
+        <div>
+          <table>
+            <tbody>
+              <tr>
+                <th class="col label" scope="row">SKU</th>
+                <td class="col data" data-th="SKU">AR2448</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">علامة تجارية</th>
+                <td class="col data" data-th="علامة تجارية">EMPORIO ARMANI</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">مقاس القرص</th>
+                <td class="col data" data-th="مقاس القرص">43 مم</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">Dial material</th>
+                <td class="col data" data-th="Dial material">ستانلس ستيل</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">لون القرص</th>
+                <td class="col data" data-th="لون القرص">أَزْرَق</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">Dial shape</th>
+                <td class="col data" data-th="Dial shape">مستدير</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">مادة الحزام</th>
+                <td class="col data" data-th="مادة الحزام">ستانلس ستيل</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">Strap Closure</th>
+                <td class="col data" data-th="Strap Closure">إبزيم</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">Water resistance</th>
+                <td class="col data" data-th="Water resistance">5 ATM</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">الحركة</th>
+                <td class="col data" data-th="الحركة">كوارتز</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">تشكيلة</th>
+                <td class="col data" data-th="تشكيلة">إمبوريو أرماني</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">الجنس</th>
+                <td class="col data" data-th="الجنس">رجال</td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">Functionality</th>
+                <td class="col data" data-th="Functionality">
+                  الكرونوغراف (حركة عقارب الساعة)
+                </td>
+              </tr>
+              <tr>
+                <th class="col label" scope="row">Dial thickness</th>
+                <td class="col data" data-th="Dial thickness">8 مم</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="shop">
+      <h4 class="text-center m-3 p-2">
+        منتجات ذات صلة
+      </h4>
+
+      <hr class="hrs" />
+      <div class="row p-3 new" style="cursor: pointer;">
+        <div
+          class="col border-right rounded-right border-primary"
+          *ngFor="let item of FavProducts"
+        >
+          <!-- [routerLink]="['../', item.id]" -->
+          <!-- href="product/{{ item.id }}" -->
+          <a
+            [routerLink]="['../', item.id]"
+            routerLinkActive="router-link-active"
+          >
+            <img src="{{ item?.image }}" />
+          </a>
+
+          <div class="divIcon">
+            <i
+              (click)="AddToCart(item.id, ic)"
+              #ic
+              class="icon fa fa-shopping-cart fa-2x mr-5"
+              aria-hidden="true"
+            ></i>
+            <i
+              #fc
+              class="fa fa-heart fa-2x"
+              (click)="AddToFav(item.id, fc)"
+              aria-hidden="true"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer class="mt-4"></app-footer>
+</main>

@@ -1,0 +1,71 @@
+<div class="best">
+  <h2 class="padded-multi-line">
+    <span>
+      <span> افضل المنتجات </span>
+    </span>
+  </h2>
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner py-2">
+      <div class="carousel-item active">
+        <div class="row">
+          <div
+            class="col-md-3 border-right rounded-right border-primary"
+            *ngFor="let item of Products1; let i = index"
+            [routerLink]="['product', item.id]"
+            routerLinkActive="active"
+          >
+            <img [src]="item.image" class="d-block w-100" alt="item.title" />
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row">
+          <div
+            [routerLink]="['product', item.id]"
+            routerLinkActive="active"
+            class="col-md-3 border-right rounded-right border-primary"
+            *ngFor="let item of Products2; let i = index"
+          >
+            <img [src]="item.image" class="d-block w-100" alt="item.title" />
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span
+          class="carousel-control-prev-icon"
+          style="color: brown;"
+          aria-hidden="true"
+        ></span>
+        <span class="sr-only">السابق </span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">التالى</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- <div class="row">
+  <div class="col">
+    <button class="btn btn-danger mt-1">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="col">
+    <button class="btn btn-info mt-1">
+      <i class="fa fa-spoon" aria-hidden="true"></i>
+    </button>
+  </div>
+</div> -->
+</div>

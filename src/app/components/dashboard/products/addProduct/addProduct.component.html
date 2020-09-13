@@ -1,0 +1,55 @@
+<div class="card card-outline-secondary" dir="rtl">
+  <button
+    class="btn btn-danger rounded float-right btn-lg mt-2 mb-1"
+    style="margin-left: 68px;"
+    [routerLink]="['../products']"
+  >
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </button>
+  <div class="card-header">
+    <h3 class="mb-0">اضافة منتج</h3>
+  </div>
+  <div class="card-body">
+    <div class="from-group">
+      <form (ngSubmit)="onSubmit(t, p, form)" #form="ngForm" class="p-2 m-2">
+        <input
+          class="form-control mx-2"
+          type="text"
+          class="form-control"
+          placeholder=" اسم المنتج "
+          required
+          name="title"
+          #t
+          ngModel
+        />
+        <input
+          class="form-control"
+          required
+          type="number"
+          class="form-control"
+          name="price"
+          placeholder=" سعر  المنتج "
+          #p
+          ngModel
+        />
+        <label for="image"> صورة المنتج </label>
+        <input
+          class="form-control"
+          required
+          type="file"
+          id="file"
+          #userPhoto
+          (change)="onFileSelected($event)"
+          name="image"
+          autocomplete="off"
+          ngModel
+        />
+        <div class="form-group">
+          <button class="btn btn-success btn-lg float-left" type="submit">
+            اضافة منتج
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <app-header></app-header>
+
+  <app-banners></app-banners>
+  <hr />
+  <app-big-deal></app-big-deal>
+  <app-shop></app-shop>
+  <app-features></app-features>
+  <app-category></app-category>
+  <app-footer></app-footer>
+</div>

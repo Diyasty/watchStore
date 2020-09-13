@@ -1,0 +1,23 @@
+.table {
+  background: #9d50bb4d;
+
+  td {
+    border: 2px solid #f1f2f7;
+    :hover {
+      color: red;
+    }
+  }
+}
+.thead {
+  background: #9d50bb85; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6e48aa8a,
+    #9d50bb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1feb04, #1061e4);
+  color: #fff;
+}
+.btn .btn-danger {
+  margin-right: 0 !important;
+}

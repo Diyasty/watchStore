@@ -1,0 +1,52 @@
+.user {
+  background-color: #2a3542;
+  color: #ddd;
+  padding: 20px 0;
+}
+nav[role="navigation"] li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+ul {
+  list-style: none;
+}
+nav[role="navigation"] li a {
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 0.9em;
+}
+nav[role="navigation"] li a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+nav[role="navigation"] li a:before {
+  content: "\f248";
+  font-family: FontAwesome;
+  padding-left: 0.6em;
+}
+nav[role="navigation"] .dashboard a:before {
+  content: "";
+}
+nav[role="navigation"] .write a:before {
+  content: "";
+}
+nav[role="navigation"] .edit a:before {
+  content: "";
+}
+nav[role="navigation"] .comments a:before {
+  content: "";
+}
+nav[role="navigation"] .users a:before {
+  content: "";
+}
+.active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+/* current nav item */
+.current,
+.dashboard .dashboard a,
+.write .write a,
+.edit .edit a,
+.comments .comments a,
+.users .users a {
+  background-color: rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,133 @@
+<header>
+  <div class="container-fluid">
+    <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-12 my-md-4 my-2">
+        <div class="btn-group">
+          <div class="dropdown">
+            <button
+              class="btn border text-white dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              جنيه مصرى
+            </button>
+            <div
+              class="dropdown-menu text-white"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <a class="dropdown-item" href="#">ريال سعودى </a>
+              <a class="dropdown-item" href="#"> دينار كويتى </a>
+              <a class="dropdown-item" href="#"> درهم اماراتى </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 text-center">
+        <h2 class="my-md-3 site-h2" [routerLink]="['/']">واتش ستور</h2>
+      </div>
+      <div class="col-md-4 col-12 text-right">
+        <p class="my-md-4 login">
+          <a
+            class="px-2"
+            [routerLink]="['/login']"
+            routerLinkActive="router-link-active"
+            *ngIf="!isAuth"
+          >
+            تسجيل الدخول
+          </a>
+          <a
+            class="px-1"
+            *ngIf="isAuth && isAdmin"
+            [routerLink]="['/dashboard']"
+          >
+            لوحة التحكم
+          </a>
+          <a
+            class="px-1"
+            *ngIf="isAuth && !isAdmin"
+            [routerLink]="['/profile/Diyasty']"
+          >
+            حسابى
+          </a>
+          <a class="px-1" *ngIf="!isAuth" [routerLink]="['/signup']">
+            التسجيل
+          </a>
+          <a
+            *ngIf="isAuth"
+            class="px-1"
+            (click)="logOut()"
+            [routerLink]="['/']"
+          >
+            تسجيل الخروج
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              الرئيسية <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">ابدأ التسوق </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">من نحن </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">اتصل بنا </a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-nav">
+        <li class="nav-item md-mx-2">
+          <input class="input" />
+          <i style="color: black;" class="fa fa-search p-4 search-icon"></i>
+        </li>
+        <li class="nav-item md-mx-2" style="cursor: pointer;">
+          <i
+            [routerLink]="['/Fav']"
+            style="color: black; font-size: 23px;"
+            class="p-3 fa fa-heart-o"
+            aria-hidden="true"
+          >
+            <span *ngIf="Fav" class="mon2">
+              {{ 0 ? Fav.length == 0 : Fav.length }}
+            </span>
+          </i>
+          <i
+            [routerLink]="['/cart']"
+            routerLinkActive="router-link-active"
+            style="color: black; font-size: 23px;"
+            class="p-3 fa fa-shopping-basket"
+            aria-hidden="true"
+          >
+            <span *ngIf="products" class="mon">
+              {{ 0 ? products.length == 0 : products.length }}
+            </span>
+          </i>
+        </li>
+      </div>
+    </nav>
+  </div>
+</header>

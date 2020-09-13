@@ -1,0 +1,16 @@
+<table class="table mt-5">
+  <thead class="thead">
+    <tr>
+      <th scope="col">رقم المعرف</th>
+      <th scope="col">اسم المستخدم</th>
+      <th scope="col">تعديل</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let user of users; let i = index">
+    <tr>
+      <th scope="row">{{ user.id }}</th>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+    </tr>
+  </tbody>
+</table>

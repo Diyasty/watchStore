@@ -1,0 +1,356 @@
+p {
+  font-size: 1.2em;
+}
+h2.padded-multi-line {
+  font: 50px cairo;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+  margin: 1em auto;
+  position: relative;
+  top: -0.7em;
+}
+
+.padded-multi-line > span {
+  /*
+    display: inline; */
+  box-shadow: 0 0.45em 0 0 #0886ecd6, 0 0.45em 0 0 #a615df;
+  /* padding: 0 10px 0 10px; */ /* position: relative; */ /* left: .7em;
+    */
+}
+.padded-multi-line span span {
+  position: relative;
+  top: 0.68em;
+  color: rgba(0, 0, 0, 0.9); /* left: -.35em; */ /* display: inline; */
+  /* white-space: pre-wrap; */
+  padding: 0 1rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; /*
+    box-shadow: .7em 0 0 -.33em orange, -.7em 0 0 -.33em orange; */
+}
+a {
+  -webkit-transition: 0.25s all;
+  transition: 0.25s all;
+}
+
+@mixin BoxShadowHelper($level: 1) {
+  @if $level == 1 {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+      0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  @if $level == 2 {
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+      0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+}
+
+h1 {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  height: 350px;
+  overflow: hidden;
+  width: 250px;
+  margin: 10px auto;
+  text-align: right;
+  position: relative;
+  .price {
+    text-align: left;
+  }
+  .badge {
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    padding: 7px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 0 rgba(68, 57, 57, 0.507);
+  }
+}
+
+.card > figure {
+  width: 90%;
+  margin: 20px auto 0 auto;
+}
+
+.card > figure > img {
+  width: 100%;
+}
+
+.details {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  position: absolute;
+  top: 85%;
+  width: 100%;
+  transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+.card:hover .details {
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  top: 25%;
+}
+
+.details > .min-details,
+.details > .options,
+.details > .options > .options-size,
+.details > .options > .options-colors {
+  margin-bottom: 20px;
+}
+
+.details > .min-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details > .min-details > h1 > span {
+  color: #7b7b7b;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.details > .options h1 {
+  margin-bottom: 5px;
+}
+
+.details > .options ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.details > .options ul li {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 5px;
+  text-align: center;
+  width: 30px;
+}
+
+.options-size > ul > li {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn {
+  background-color: #db4289;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  color: #fff !important;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  a {
+    color: #fff !important;
+  }
+}
+
+.btn:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  a {
+    color: #fff !important;
+  }
+}
+.btn2 {
+  background-color: #13e77d;
+  border-radius: 5px;
+  color: #fff !important;
+  display: block;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  width: 100%;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  a {
+    color: #fff !important;
+  }
+}
+
+.btn2:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.mra {
+  padding: 10px 10px;
+}
+
+#toastx2 {
+  visibility: hidden;
+  max-width: 50px;
+  height: 50px;
+  /*margin-left: -125px;*/
+  margin: auto;
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a7bd5,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a7bd5,
+    #00d2ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0vh;
+  font-size: 17px;
+  white-space: nowrap;
+}
+#toastx2 #img {
+  width: 50px;
+  height: 50px;
+
+  float: left;
+
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  box-sizing: border-box;
+
+  background: #9d50bb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6e48aa,
+    #9d50bb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6e48aa, #9d50bb);
+  color: #fff;
+}
+#toastx2 #desc {
+  color: #fff;
+
+  padding: 16px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#toastx2.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 2s,
+    fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, expand 0.5s 0.5s, stay 3s 1s, shrink 0.5s 4s,
+    fadeout 0.5s 4.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes expand {
+  from {
+    min-width: 50px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+
+@keyframes expand {
+  from {
+    min-width: 50px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+@-webkit-keyframes stay {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+
+@keyframes stay {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 350px;
+  }
+}
+@-webkit-keyframes shrink {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 50px;
+  }
+}
+
+@keyframes shrink {
+  from {
+    min-width: 350px;
+  }
+  to {
+    min-width: 50px;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 60px;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 60px;
+    opacity: 0;
+  }
+}

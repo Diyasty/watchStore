@@ -1,0 +1,55 @@
+header {
+  cursor: pointer;
+  background: #9d50bb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6e48aa,
+    #9d50bb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6e48aa, #9d50bb);
+  color: white; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  .dropdown-menu,
+  .dropdown-item {
+    font-size: 0.8em;
+  }
+  .nav-link {
+    padding: 0 1.5em;
+  }
+  .navbar-nav .nav-item {
+    margin-left: 31px !important;
+  }
+  .login {
+    a {
+      font-size: 0.9em;
+      text-decoration: none;
+      color: white;
+    }
+  }
+  li {
+    position: relative;
+    .mon {
+      top: 4px;
+      right: 53px;
+      font-size: 13px;
+      padding: 7px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: rgb(235, 4, 158);
+      color: #fff;
+    }
+    .mon2 {
+      top: -6px;
+      right: 6px;
+      font-size: 15px;
+      padding: 5px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #04ebdc;
+      color: #fff;
+    }
+  }
+  .input {
+    border-radius: 5px;
+    box-shadow: 0 0.5px 0.5px 0.5px rgba(6, 169, 175, 0.116);
+  }
+}
