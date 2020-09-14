@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "protofolio": {
+    "matger": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,19 +17,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/",
+            "outputPath": "dist/app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
+            "aot": false,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["node_modules/aos/dist/aos.css", "src/styles.scss"],
+            "styles": [
+              "src/assets/bootstrap/css/bootstrap.min.css",
+              "src/assets/fontAwsome/css/font-awesome.css",
+              "src/styles.scss"
+            ],
             "scripts": [
-              "node_modules/aos/dist/aos.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js",
-              "node_modules/popper.js/dist/popper.js",
-              "node_modules/jquery/dist/jquery.js"
+              "src/assets/bootstrap/js/jquery-3.3.1.slim.min.js",
+              "src/assets/bootstrap/js/popper.min.js",
+              "src/assets/bootstrap/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -45,6 +48,7 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -66,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "protofolio:build"
+            "browserTarget": "matger:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "protofolio:build:production"
+              "browserTarget": "matger:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "protofolio:build"
+            "browserTarget": "matger:build"
           }
         },
         "test": {
@@ -107,16 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "protofolio:serve"
+            "devServerTarget": "matger:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "protofolio:serve:production"
+              "devServerTarget": "matger:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "WahtchStore"
+  "defaultProject": "matger",
+  "cli": {
+    "analytics": "adb4ac40-d1ef-4695-87b1-7ff7ed7b9688"
+  }
 }
