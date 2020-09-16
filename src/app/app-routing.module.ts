@@ -1,23 +1,23 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { CartComponent } from "./components/cart/cart.component";
+import { CartComponent } from "./pages/cart/cart.component";
 import { AppComponent } from "./app.component";
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
-import { SignupComponent } from "./signup/signup.component";
-import { LogInComponent } from "./log-in/log-in.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { AboutComponent } from ".//pages/about/about.component";
+import { SignupComponent } from "./pages/signup/signup.component";
+import { LogInComponent } from "./pages/log-in/log-in.component";
 import { ProductComponent } from "./layout/category/product/product.component";
-import { CheckoutComponent } from "./components/checkout/checkout.component";
-import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { FavComponent } from "./layout/fav/fav.component";
-import { OrdersComponent } from "./components/dashboard/orders/orders.component";
-import { UsersComponent } from "./components/dashboard/users/users.component";
-import { ProductsComponent } from "./components/dashboard/products/products.component";
-import { AddProductComponent } from "./components/dashboard/products/addProduct/addProduct.component";
-import { UserDashboardComponent } from "./components/UserDashboard/UserDashboard.component";
-import { EditUserComponent } from "./components/UserDashboard/editUser/editUser.component";
-import { UserOrdersComponent } from "./components/UserDashboard/UserOrders/UserOrders.component";
-import { FavUserComponent } from "./components/UserDashboard/FavUser/FavUser.component";
+import { CheckoutComponent } from "./pages/checkout/checkout.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { FavComponent } from ".//pages/fav/fav.component";
+import { OrdersComponent } from "./dashboard/orders/orders.component";
+import { UsersComponent } from "./dashboard/users/users.component";
+import { ProductsComponent } from "./dashboard/products/products.component";
+import { AddProductComponent } from "./dashboard/products/addProduct/addProduct.component";
+import { UserDashboardComponent } from "./dashboard/UserDashboard/UserDashboard.component";
+import { EditUserComponent } from "./dashboard/UserDashboard/editUser/editUser.component";
+import { UserOrdersComponent } from "./dashboard/UserDashboard/UserOrders/UserOrders.component";
+import { FavUserComponent } from "./dashboard/UserDashboard/FavUser/FavUser.component";
 
 const routes: Routes = [
   {

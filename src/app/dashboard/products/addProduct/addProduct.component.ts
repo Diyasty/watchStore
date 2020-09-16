@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { Observable, from } from "rxjs";
 import { finalize, switchMap, tap, mergeMap } from "rxjs/operators";
 import { AngularFireStorage } from "@angular/fire/storage";
-import { ProductsService } from "src/app/products.service";
+import { ProductsService } from "../../../Services/products.service";
 import { NgForm } from "@angular/forms";
 import { Route } from "@angular/compiler/src/core";
 import { Router } from "@angular/router";
@@ -20,7 +20,7 @@ export class AddProductComponent implements OnInit {
     private router: Router
   ) {}
   // @ViewChild('userPhoto') img:ElementRef;
-  @ViewChild("userPhoto", { static: false }) image: ElementRef;
+  @ViewChild("userPhoto", { static: false }) image: any;
   ngOnInit() {}
   onFileSelected(event: Event) {}
   onSubmit(t, p, f: NgForm) {

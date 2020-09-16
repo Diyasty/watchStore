@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "src/app/Services/auth.service";
-import { ProductsService } from "src/app/products.service";
+import { AuthService } from "../../../Services/auth.service";
+import { ProductsService } from "../../../Services/products.service";
 
 @Component({
   selector: "app-editUser",

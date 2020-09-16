@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { map } from "rxjs/operators";
-import { AuthService } from "./Services/auth.service";
+import { AuthService } from "./auth.service";
 import { Observable } from "rxjs";
 import { AngularFireStorage } from "@angular/fire/storage";
 import { promise } from "protractor";

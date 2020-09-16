@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from "@angular/core";
-import { slideInAnimation } from "src/app/RouterAnimations";
-import { slideInOutAnimation, fadeInAnimation } from "src/app/animations";
+import { slideInAnimation } from "../../Animations/RouterAnimations";
+import { slideInOutAnimation, fadeInAnimation } from "../../Animations/animations";
 
 @Component({
   selector: "app-UserDashboard",

@@ -1,12 +1,12 @@
-import { ProductsService } from "./../products.service";
+import { ProductsService } from "../../Services/products.service";
 import {
   Component,
   OnInit,
   AfterViewInit,
   AfterContentInit,
 } from "@angular/core";
-import { AuthService } from "../Services/auth.service";
-import { fadeInAnimation } from ".././animations";
+import { AuthService } from "../../Services/auth.service";
+import { fadeInAnimation } from "../../Animations/animations";
 
 @Component({
   moduleId: module.id.toString(),
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit, AfterContentInit {
   Products: [] = [];
   ngOnInit() {
     this.isLoading = false;
-    
+
     this.pro.getProducts().subscribe((data: any) => (this.Products = data));
   }
 }

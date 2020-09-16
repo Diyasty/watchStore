@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { ProductsService } from "src/app/products.service";
+import { ProductsService } from "../../../Services/products.service";
 import { ActivatedRoute } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 
@@ -20,7 +20,6 @@ export class ProductComponent implements OnInit {
   vote;
   info;
   des = true;
-  @ViewChild("in", { static: false }) InfoBtn: HTMLElement;
   Products: any;
   constructor(
     private productSer: ProductsService,

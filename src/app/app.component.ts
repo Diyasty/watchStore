@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { slideInOutAnimation } from "./animations";
-import { ProductsService } from "./products.service";
+import { slideInOutAnimation } from "./Animations/animations";
+import { ProductsService } from "./Services/products.service";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",

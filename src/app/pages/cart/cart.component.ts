@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { ProductsService } from "src/app/products.service";
-import { AuthService } from "src/app/Services/auth.service";
+import { ProductsService } from "../../Services/products.service";
+import { AuthService } from "../../Services/auth.service";
 
 @Component({
   selector: "app-cart",
@@ -16,7 +16,7 @@ export class CartComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.pro.getCart().subscribe((data) => {
       this.UserProducts = data.map((item: any) => {
-        
+
         return {
           id: item.payload.doc.id,
           ...item.payload.doc.data(),

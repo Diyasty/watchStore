@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
-import { ProductsService } from "src/app/products.service";
-import { ProductComponent } from "./product/product.component";
+import { ProductsService } from "../../Services/products.service";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute } from "@angular/router";

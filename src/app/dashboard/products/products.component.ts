@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { ProductsService } from "src/app/products.service";
+import { ProductsService } from "../../Services/products.service";
 import { AngularFireStorage } from "@angular/fire/storage";
 
 import { Observable } from "rxjs";
