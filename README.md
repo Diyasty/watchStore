@@ -1,6 +1,9 @@
-# Matger
+# Watch Store 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
+## Arabic Angular e-commerce app Project
+
+# Edit firebase confing :
+  ### Edit environment firebase in environment :)
 
 ## Development server
 
